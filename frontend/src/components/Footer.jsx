@@ -8,9 +8,10 @@ const Footer = () => {
         <div>
           <img src={assets.logo} className="mb-5 w-32" alt="company logo" />
           <p className="w-full md:w-2/3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut omnis
-            reiciendis tempora delectus veniam, illo modi quisquam repellendus
-            laborum molestiae!
+            Unlock the extraordinary and embrace a life without limits. Imagine
+            waking up every day to endless possibilities, where every moment is
+            a chance to create, inspire, and conquer. This is your time—bold,
+            vibrant, and unstoppable. Dare to dream bigger.
           </p>
         </div>
         <div>
@@ -33,7 +34,7 @@ const Footer = () => {
       <div>
         <hr className="border border-gray-200" />
         <p className="py-5 tex-sm text-center">
-          Copyright 2024@forever.com - All Right Reserved.
+          Copyright 2025@forever.com - All Right Reserved.
         </p>
       </div>
     </footer>

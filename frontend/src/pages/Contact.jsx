@@ -18,12 +18,12 @@ const Contact = () => {
         <div className="flex flex-col justify-center items-start gap-6">
           <p className="font-semibold text-xl text-gray-600">Our Store</p>
           <p className="text-gray-500">
-            410 Terry Avenue North, Seattle <br />
-            Washington, 98109
+            (360) 308-0546 Conifer Dr NE Bremerton <br />
+            Washington(WA), 98311
           </p>
           <p className="text-gray-500">
-            Tel: (315) 444-0585 <br />
-            Email:adminOf@forever.com{" "}
+            Tel: (315) 154-0585 <br />
+            Email:adminecommerce@forever.com{" "}
           </p>
           <p className="font-semibold text-xl text-gray-600">
             Careers at Forever
