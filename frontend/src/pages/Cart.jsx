@@ -53,14 +53,14 @@ const Cart = () => {
                   <p className="text-xs sm:text-lg font-medium">
                     {productData.name}
                   </p>
-                  <div className="flex items-center gap-5 mt-2">
-                    <p>
+                  <div className="flex items-center gap-1 mt-2">
                       {currency}
+                    <p>
                       {productData.price}
                     </p>
-                    <p className="px-2 sm:px-3 sm:py-1 border bg-slate-50">
+                    {/* <p className="px-2 sm:px-3 sm:py-1 border bg-slate-50">
                       {item.size}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>

@@ -74,6 +74,9 @@ import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 import parcel_icon from './parcel_icon.png'
+import SBE_Logo from './SBE_Logo.png'
+import SBE_banner from './SBE_banner.png'
+import SBE_About from './SBE_About.png'
 
 export const assets = {
     logo,
@@ -94,7 +97,10 @@ export const assets = {
     razorpay_logo,
     stripe_logo,
     cross_icon,
-    parcel_icon
+    parcel_icon,
+    SBE_Logo,
+    SBE_banner,
+    SBE_About
 }
 
 export const products = [

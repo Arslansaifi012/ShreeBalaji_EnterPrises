@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminPanel from "./components/AdminPanel";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
-export const currency = "$";
+export const currency = "₹";
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   useEffect(() => {

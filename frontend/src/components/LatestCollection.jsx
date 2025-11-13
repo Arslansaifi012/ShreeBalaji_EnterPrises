@@ -9,7 +9,7 @@ const LatestCollection = () => {
   // console.log(products);
 
   useEffect(() => {
-    setLatestProducts(products.slice(0, 20));
+    setLatestProducts(products.slice(-8).reverse());
   }, [products]);
   return (
     <div className="my-10">
@@ -23,8 +23,9 @@ const LatestCollection = () => {
       </div>
 
       {/*Rendering Products*/}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
         {latestProducts.map((product) => (
+          console.log(product),
           <ProductItem
             key={product._id}
             id={product._id}

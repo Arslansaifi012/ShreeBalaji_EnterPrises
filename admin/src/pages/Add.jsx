@@ -13,10 +13,10 @@ const Add = ({ token }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("Men");
-  const [subCategory, setSubCategory] = useState("Topwear");
+  const [category, setCategory] = useState("speaker");
+  // const [subCategory, setSubCategory] = useState("Topwear");
   const [bestseller, setBestseller] = useState(false);
-  const [sizes, setSizes] = useState([]);
+  // const [sizes, setSizes] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmitHandler = async (e) => {
@@ -25,13 +25,14 @@ const Add = ({ token }) => {
 
     try {
       const formData = new FormData();
+
       formData.append("name", name);
       formData.append("description", description);
       formData.append("price", price);
       formData.append("category", category);
-      formData.append("subCategory", subCategory);
       formData.append("bestseller", bestseller);
-      formData.append("sizes", JSON.stringify(sizes));
+      // formData.append("subCategory", subCategory);
+      // formData.append("sizes", JSON.stringify(sizes));
 
       // Only append images if they exist
       if (image1) formData.append("image1", image1);
@@ -45,6 +46,9 @@ const Add = ({ token }) => {
           "Content-Type": "multipart/form-data",
         },
       };
+
+      console.log(formData);
+      
 
       const response = await axios.post(
         `${backendUrl}/api/product/add`,
@@ -60,10 +64,10 @@ const Add = ({ token }) => {
         setName("");
         setDescription("");
         setPrice("");
-        setCategory("Men");
-        setSubCategory("Topwear");
+        setCategory("speaker");
+        // setSubCategory("Topwear");
         setBestseller(false);
-        setSizes([]);
+        // setSizes([]);
         setImage1(null);
         setImage2(null);
         setImage3(null);
@@ -76,8 +80,13 @@ const Add = ({ token }) => {
       toast.error(error.response?.data?.message || "Failed to add product");
     } finally {
       setIsSubmitting(false);
-    }
+    }    
+
   }; // onSubmitHandler
+
+
+
+
 
   return (
     <form
@@ -171,14 +180,27 @@ const Add = ({ token }) => {
             className="w-full px-3 py-2 border rounded"
             required
           >
-            <option value="Men">Men</option>
-            <option value="Women">Women</option>
-            <option value="Kids">Kids</option>
+            <option value="spekaer">spekaer</option>
+            <option value="headphones">headphones</option>
+            <option value="airpods">airpods</option>
           </select>
         </div>
+
+        <div className="">
+        <p className="mb-2">Price</p>
+        <input
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
+          className="w-full py-2 px-3 max-w-[500px] border rounded"
+          type="number"
+          placeholder="Set Price"
+          required
+        />
+      </div>
+
         <div>
-          <p className="mb-2">Sub Category</p>
-          <select
+          {/* <p className="mb-2">Sub Category</p> */}
+          {/* <select
             onChange={(e) => setSubCategory(e.target.value)}
             value={subCategory}
             className="w-full px-3 py-2 border rounded"
@@ -187,9 +209,9 @@ const Add = ({ token }) => {
             <option value="Topwear">Topwear</option>
             <option value="Bottomwear">Bottomwear</option>
             <option value="Winterwear">Winterwear</option>
-          </select>
+          </select> */}
         </div>
-        <div>
+        {/* <div>
           <p className="mb-2">Product Price</p>
           <input
             onChange={(e) => setPrice(e.target.value)}
@@ -200,11 +222,11 @@ const Add = ({ token }) => {
             required
             min="0"
           />
-        </div>
+        </div> */}
       </div>
       <div>
-        <p className="mb-2">Product Sizes</p>
-        <div className="flex gap-2">
+        {/* <p className="mb-2">Product Sizes</p> */}
+        {/* <div className="flex gap-2">
           {["S", "M", "L", "XL", "XXL"].map((size) => (
             <div
               key={size}
@@ -225,7 +247,7 @@ const Add = ({ token }) => {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div className="flex gap-2 mt-2 items-center">
         <input

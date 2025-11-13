@@ -7,6 +7,8 @@ import ProductItem from "../components/ProductItem";
 
 const Collection = () => {
   const { products, showSearch, search } = useContext(ShopContext);
+ console.log(products)
+  
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -97,33 +99,33 @@ const Collection = () => {
               <input
                 className="w-3"
                 type="checkbox"
-                value={"Men"}
+                value={"speaker"}
                 onChange={toggleCategory}
               />
-              Men
+              speaker
             </p>
             <p className="flex gap-2">
               <input
                 className="w-3"
                 type="checkbox"
-                value={"Women"}
+                value={"headphones"}
                 onChange={toggleCategory}
               />
-              Women
+              headphones
             </p>
             <p className="flex gap-2">
               <input
                 className="w-3"
                 type="checkbox"
-                value={"Kids"}
+                value={"airpods"}
                 onChange={toggleCategory}
               />
-              Kids
+              airpods
             </p>
           </div>
         </div>
         {/*Sub Category Filter*/}
-        <div
+        {/* <div
           className={` border border-gray-300 pl-5 py-3 my-5 ${
             showFilter ? "" : "hidden"
           } sm:block`}
@@ -158,7 +160,7 @@ const Collection = () => {
               Winterwear
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       {/*Right Side*/}
       <div className="flex-1">

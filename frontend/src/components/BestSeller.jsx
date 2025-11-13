@@ -14,14 +14,40 @@ const BestSeller = () => {
   }, [products]);
   return (
     <div className="my-10">
-      <div className="text-center text-3xl py-8">
-        <Title text1={"BEST"} text2={"SELLERS"}></Title>
-        <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-700">
-          Customer favorites that never go out of style! These top-rated picks
-          combine exceptional quality with unbeatable value—loved by thousands,
-          now waiting for you.
-        </p>
-      </div>
+<div className="text-center py-16 px-6 my-10 bg-gradient-to-b from-gray-50 to-white rounded-2xl shadow-sm ">
+  {/* Title Section */}
+  <div className="mb-6">
+    <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
+        BEST
+      </span>{" "}
+      SELLERS
+    </h2>
+  </div>
+
+  {/* Description */}
+  <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+    Looking for quality you can trust? Our{" "}
+    <span className="font-semibold text-blue-600">Top-Rated Picks</span> are
+    customer favorites that combine exceptional quality with unbeatable value.
+  </p>
+
+  <p className="max-w-2xl mx-auto mt-4 text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+    Loved by thousands, these essential electronics are built to last and
+    designed to perform — offering the perfect blend of{" "}
+    <span className="text-green-600 font-medium">innovation</span> and{" "}
+    <span className="text-green-600 font-medium">reliability</span>.
+  </p>
+
+  <p className="max-w-2xl mx-auto mt-6 text-base sm:text-lg md:text-xl text-gray-900 font-semibold">
+    ✨ Now waiting for you: Discover the best-selling, most
+    highly-reviewed tech that stands the test of time!
+  </p>
+
+  {/* Decorative line */}
+  <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto mt-8 rounded-full"></div>
+</div>
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
         {bestSeller.map((product) => (
           <ProductItem

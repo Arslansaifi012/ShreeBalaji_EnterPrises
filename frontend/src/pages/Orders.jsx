@@ -60,7 +60,7 @@ const Orders = () => {
                         {item.price}
                       </p>
                       <p>Quantity: {item.quantity}</p>
-                      <p>Size: {item.size}</p>
+                      
                     </div>
                     <p className="text-sm">
                       Date:{" "}
