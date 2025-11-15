@@ -54,6 +54,29 @@ const Orders = ({ token }) => {
     }
   };
 
+
+  const downloadInvoice = async (id) => {
+  try {
+    const response = await axios.get(
+      `${backendUrl}/api/order/pdf/${id}`,
+      {
+        responseType: "blob", // IMPORTANT
+        headers: { token }
+      }
+    );
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", `order-${id}.pdf`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  } catch (error) {
+    console.log('download invoice Error',error.message);
+    toast.error("Failed to download invoice");
+  }
+};
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h3 className="text-3xl font-bold mb-8 text-gray-800">Order History</h3>
@@ -174,6 +197,14 @@ const Orders = ({ token }) => {
                         </option>
                         <option value="Delivered">Delivered</option>
                       </select>
+
+                    <button
+  onClick={() => downloadInvoice(order._id)}
+  className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
+>
+  Download Invoice
+</button>
+
 
                       <div className="text-sm text-gray-500">
                         Current status:{" "}
