@@ -73,7 +73,7 @@ const Product = () => {
     }
   }
 
-  // ------------------------
+ 
 
   const fetchProductData = useCallback(() => {
     try {

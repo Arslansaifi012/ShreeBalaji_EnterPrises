@@ -26,12 +26,12 @@ const allreview = async(req, res) =>{
     try {
 
         const reviews = await review.find({productId:req.params.productId}).populate("userId", "name"); ;
-        const avg = review.length ? reviews.reduce((a,b)=> a+b.rating) / reviews.length :0 ;
+        const avg = reviews.length ? reviews.reduce((a,b)=> a+b.rating) / reviews.length :0 ;
 
         res.json({success:true, avgRating:avg, totalReviews:reviews.length, reviews}) ;
         
     } catch (error) {
-        console.log("all reviewError", error.messsage) ;
+        console.log("all reviewError", error.message) ;
         res.json({success:false, message:error.message})
     }
 
